@@ -1,0 +1,25 @@
+{
+    "name": "riveryuan/file-manager",
+    "description": "A file manager",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Riveryuan\\FileManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eric Shi",
+            "email": "eric.shi@riveryuan.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Riveryuan\\FileManager\\FileManagerServiceProvider"
+            ]
+        }
+    }
+}
