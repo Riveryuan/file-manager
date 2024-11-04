@@ -8,7 +8,8 @@ namespace Riveryuan\FileManager;
  */
 class FileManager{
 
-    public function getFileList(){
-        return ['a.php'];
+    public function FileList(){
+        return view('filemanager::default');
     }
+
 }
