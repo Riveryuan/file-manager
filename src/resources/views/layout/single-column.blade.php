@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="X-CSRF-TOKEN" content="{{csrf_token()}}">
     <title>@yield('pageTitle')</title>
+    <style>
+        html{
+            font-size:14px;
+        }
+    </style>
     @yield('custom_css_front')
     <link rel="stylesheet" href="{{$assets_path}}/adminlte/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="{{$assets_path}}/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="{{$assets_path}}/adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="{{$assets_path}}/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{$assets_path}}/css/css.min.css">
     @yield('custom_css_end')
     <script>
         let BASE_URL = '{{config('app.url')}}';
@@ -28,6 +34,7 @@
 <script src="{{$assets_path}}/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{$assets_path}}/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <script src="{{$assets_path}}/adminlte/dist/js/adminlte.js"></script>
+<script src="{{$assets_path}}/js/js.min.js"></script>
 @yield('custom_script_footer_end')
 </body>
 </html>

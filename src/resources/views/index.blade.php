@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <h2 class="card-title">Login</h2>
                 </div>
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action="{{url('fm/index-action')}}" enctype="multipart/form-data" target="_self" id="login-form">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
@@ -34,8 +34,10 @@
                         <button type="submit" class="btn btn-info">Sign in</button>
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
+                    {{csrf_field()}}
                 </form>
             </div>
+            {!! $tpl_info !!}
         </div>
     </div>
 

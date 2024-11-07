@@ -25,13 +25,27 @@ class Controller extends BasicController {
     protected $tplParams = [];
 
     /**
+     * @var FileManagerService $service
+     */
+    protected $service;
+
+    public function __construct() {
+        $this->service = new FileManagerService();
+    }
+
+    /**
      * Before action.
      *
      * @param $action
      * @return void
      */
-    public function beforeAction($action){
-        $this->tplParams['assets_path'] = config('app.url').'/vendor/riveryuan/filemanager';
+    public function beforeAction($action) {
+        // 初始化页面消息
+        $this->tplParams['tpl_info'] = '';
+
+        // 静态资源路径
+        $this->tplParams['assets_path'] = config('app.url') . '/vendor/riveryuan/filemanager';
+
     }
 
     /**
