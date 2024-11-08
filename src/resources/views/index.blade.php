@@ -32,7 +32,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Sign in</button>
-                        <button type="submit" class="btn btn-default float-right">Cancel</button>
+                        <button type="button" class="btn btn-default float-right">Cancel</button>
                     </div>
                     {{csrf_field()}}
                 </form>
