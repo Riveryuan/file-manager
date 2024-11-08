@@ -45,7 +45,26 @@ class FileManager extends Controller {
     public function fileList(Request $request) {
         // $this->tplParams['tpl_info'] = $this->service->buildAlertInfo('文件列表页面');
         $this->tplParams['menu_tag'] = 'm-file-list';
-        $this->tplParams['file_list'] = $this->service->getDirFileList();
+
+        $dir_change = $request->post('dir_change','no');
+        if ($dir_change === 'yes'){
+            $target_dir = $request->post('target_dir', '');
+            $current_dir = $request->post('current_dir', '');
+            $jump_type = $request->post('jump_type', '');
+
+            if ($jump_type === 'next'){
+                $next_dir = $current_dir . DIRECTORY_SEPARATOR . $target_dir;
+                $next_dir = File::exists($next_dir) ? $next_dir : $current_dir;
+                $this->tplParams['file_list'] = $this->service->getDirFileList($next_dir);
+            }elseif ($jump_type === 'up'){
+                $up_dir = File::exists(dirname($current_dir)) ? dirname($current_dir) : $current_dir;
+                $this->tplParams['file_list'] = $this->service->getDirFileList($up_dir);
+            }else{
+                $this->tplParams['file_list'] = $this->service->getDirFileList();
+            }
+        }else{
+            $this->tplParams['file_list'] = $this->service->getDirFileList();
+        }
 
         // 加载视图
         return view('filemanager::file-list', $this->tplParams);

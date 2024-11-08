@@ -25,9 +25,6 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{$assets_path}}/adminlte/dist/img/AdminLTELogo.png" alt="FileManagerLogo" height="60" width="60">
-    </div>
 @include('filemanager::commons.nav-top')
 @include('filemanager::commons.nav-main')
     <div class="content-wrapper">
